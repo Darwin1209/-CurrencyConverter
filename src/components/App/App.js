@@ -21,7 +21,13 @@ class App extends React.Component {
         })
     }
 
-    handleChangeValue = (valueIn, valueOut) => {
+    handleChangeValueIn = (valueIn) => {
+        let valueOut = (valueIn * this.state.cost).toFixed(3);
+        this.setState( {valueIn, valueOut} );
+    }
+
+    handleChangeValueOut = (valueOut) => {
+        let valueIn = (valueOut / this.state.cost).toFixed(3);
         this.setState( {valueIn, valueOut} );
     }
 
@@ -32,14 +38,16 @@ class App extends React.Component {
         return (
             <div>
                 <CurrencyPairs
-                    pairs = {currencyOut, currencyIn}
-                    onCurrencyChange = {this.handleChangeCurrency}
+                    currencyIn = { currencyIn }
+                    currencyOut = { currencyOut }
+                    //onCurrencyChange = {this.handleChangeCurrency}
                 />
                 <ValuePairs 
                     valueIn = {valueIn }
                     valueOut = { valueOut }
                     cost = { cost }
-                    onValueChange = {this.handleChangeValue}
+                    onValueChangeIn = { this.handleChangeValueIn }
+                    onValueChangeOut = { this.handleChangeValueOut }
                 />
             </div>
         );

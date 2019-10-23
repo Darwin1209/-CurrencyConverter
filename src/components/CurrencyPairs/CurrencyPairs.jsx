@@ -7,12 +7,12 @@ class CurrencyPairs extends React.Component {
     }
 
     render() {
-        const { currencyIn, currencyOut, handleChangeCurrency } = this.props
+       const { currencyIn, currencyOut} = this.props
 
         return (
             <div>
-                <input type="text" value={currencyIn}/>
-                <input type="text" value={currencyOut}/>
+                <input type="text" value={ currencyIn }/>
+                <input type="text" value={currencyOut }/>
             </div>
         )
     }

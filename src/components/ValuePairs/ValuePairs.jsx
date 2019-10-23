@@ -1,25 +1,28 @@
 import React from 'react';
 
 class ValuePairs extends React.Component {
-    state = {
-        valueIn: this.props.valueIn,
-        valueOut: this.props.valueOut,
+  
+    handleChangeIn = (e) => {
+        this.props.onValueChangeIn(e.target.value);
     }
 
-    handleChange = (e) => {
-        this.setState({valueIn: e.target.value})
-        this.props.onValueChange(e.target.value);
+    handleChangeOut = (e) => {
+        this.props.onValueChangeOut(e.target.value);
     }
 
     render() {
 
         return (
             <div>
-                <input type="text" value={this.state.valueIn}
-                    onChange = { this.handleChange }
+                <input type="number"
+                    id = "1"
+                    value={ this.props.valueIn }
+                    onChange = { this.handleChangeIn }
                 />
-                <input type="text" value={this.state.valueOut}
-
+                <input type="number"
+                    if = "2"
+                    value={this.props.valueOut}
+                    onChange = { this.handleChangeOut }
                 />
             </div>
         )
