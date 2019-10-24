@@ -8,7 +8,7 @@ class App extends React.Component {
         currencyIn: "RUB",
         currencyOut: "USD",
         cost: 0.015658,
-        valueIn: 1000,
+        valueIn: (1000),
         valueOut: (1000 * 0.015658).toFixed(3)// + Number(this.cost))
     }
 
@@ -17,7 +17,8 @@ class App extends React.Component {
         .then(data => data.json())
         .then(data => {
             const curren = pairs.split('_');
-            this.setState({cost: data[pairs], currencyIn: curren[0], currencyOut: curren[1]});
+            console.log(curren)
+            this.setState({cost: data[pairs], currencyIn: curren[0], currencyOut: curren[1], valueOut: (this.state.valueIn * data[pairs]).toFixed(3)});
         })
     }
 
@@ -40,7 +41,7 @@ class App extends React.Component {
                 <CurrencyPairs
                     currencyIn = { currencyIn }
                     currencyOut = { currencyOut }
-                    //onCurrencyChange = {this.handleChangeCurrency}
+                    onCurrencyChange = { this.handleChangeCurrency }
                 />
                 <ValuePairs 
                     valueIn = {valueIn }

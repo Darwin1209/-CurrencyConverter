@@ -15,12 +15,10 @@ class ValuePairs extends React.Component {
         return (
             <div>
                 <input type="number"
-                    id = "1"
                     value={ this.props.valueIn }
                     onChange = { this.handleChangeIn }
                 />
                 <input type="number"
-                    if = "2"
                     value={this.props.valueOut}
                     onChange = { this.handleChangeOut }
                 />
