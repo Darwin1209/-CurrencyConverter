@@ -1,0 +1,17 @@
+.ValuePairs {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.ValueInput {
+    width: 48%;
+}
+
+.ValueInput input {
+    width: 89%;
+    padding: 15px 5%;
+    border: 1px solid #cdcdcd;
+    background-color: #998760;
+    color: white;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ValuePairs.css';
+
 class ValuePairs extends React.Component {
   
     handleChangeIn = (e) => {
@@ -13,15 +15,21 @@ class ValuePairs extends React.Component {
     render() {
 
         return (
-            <div>
-                <input type="number"
-                    value={ this.props.valueIn }
-                    onChange = { this.handleChangeIn }
-                />
-                <input type="number"
-                    value={this.props.valueOut}
-                    onChange = { this.handleChangeOut }
-                />
+            <div className = "ValuePairs">
+                <div className="ValueInput">
+                    <input
+                        type="number"
+                        value={ this.props.valueIn }
+                        onChange = { this.handleChangeIn }
+                    />
+                </div>
+                <div className="ValueInput">
+                    <input
+                        type="number"
+                        value={this.props.valueOut}
+                        onChange = { this.handleChangeOut }
+                    />
+                </div>
             </div>
         )
     }

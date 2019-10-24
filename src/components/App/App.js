@@ -3,13 +3,15 @@ import React from 'react';
 import CurrencyPairs from '../CurrencyPairs/CurrencyPairs';
 import ValuePairs from '../ValuePairs/ValuePairs';
 
+import './App.css';
+
 class App extends React.Component {
     state = {
         currencyIn: "RUB",
         currencyOut: "USD",
         cost: 0.015658,
         valueIn: (1000),
-        valueOut: (1000 * 0.015658).toFixed(3)// + Number(this.cost))
+        valueOut: +(1000 * 0.015658).toFixed(2)// + Number(this.cost))
     }
 
     handleChangeCurrency = (pairs) => {
@@ -23,12 +25,12 @@ class App extends React.Component {
     }
 
     handleChangeValueIn = (valueIn) => {
-        let valueOut = (valueIn * this.state.cost).toFixed(3);
+        let valueOut = +(valueIn * this.state.cost).toFixed(2);
         this.setState( {valueIn, valueOut} );
     }
 
     handleChangeValueOut = (valueOut) => {
-        let valueIn = (valueOut / this.state.cost).toFixed(3);
+        let valueIn = +(valueOut / this.state.cost).toFixed(2);
         this.setState( {valueIn, valueOut} );
     }
 
@@ -37,7 +39,7 @@ class App extends React.Component {
         const {currencyIn, currencyOut, cost, valueIn, valueOut} = this.state
 
         return (
-            <div>
+            <div className="App">
                 <CurrencyPairs
                     currencyIn = { currencyIn }
                     currencyOut = { currencyOut }

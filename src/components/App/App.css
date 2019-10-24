@@ -1,0 +1,7 @@
+.App {
+    margin: 20% 10%;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}

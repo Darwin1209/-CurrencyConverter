@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './CurrencyPairs.css'
+
 let a = `RUB_EUR_USD_UAH_BBD_BTN_BND_XAF_CUP_FKP_GIP_HUF_IRR_JMD_AUD_LAK_
         LYD_MKD_XOF_NZD_OMR_PGK_RWF_WST_RSD_SEK_TZS_AMD_BSD_BAM_CVE_CNY_
         CRC_CZK_ERN_GEL_HTG_INR_JOD_KRW_LBP_MWK_MRO_MZN_ANG_PEN_QAR_STD_
@@ -41,7 +43,7 @@ class CurrencyPairs extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="CurrencyPairs">
                 <div className="box">
                     <select onChange = { this.handleChangeIn } value={this.state.currencyIn}>
                         {elements}
